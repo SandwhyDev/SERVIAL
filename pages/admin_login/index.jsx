@@ -9,7 +9,7 @@ const index = () => {
     const { username, password } = e.target;
 
     axios
-      .post("http://34.124.221.226:9000/api/admin_login", {
+      .post("http://sandy_api:9000/api/admin_login", {
         username: username.value,
         password: password.value,
       })
