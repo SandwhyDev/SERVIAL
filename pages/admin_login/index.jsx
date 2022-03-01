@@ -9,7 +9,7 @@ const index = () => {
     const { username, password } = e.target;
 
     axios
-      .post("http://sandy_api:9000/api/admin_login", {
+      .post("https://sandy_api.jvalleyserver.net/api/admin_login", {
         username: username.value,
         password: password.value,
       })

@@ -19,7 +19,7 @@ const index = () => {
     });
 
     axios
-      .post("http://sandy_api:9000/api/user_create", {
+      .post("https://sandy_api.jvalleyserver.net/api/user_create", {
         username: username.value,
         email: email.value,
         password: password.value,
