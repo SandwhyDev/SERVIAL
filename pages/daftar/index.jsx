@@ -19,7 +19,7 @@ const index = () => {
     });
 
     axios
-      .post("http://34.124.221.226:9000/api/user_create", {
+      .post("http://sandy_api:9000/api/user_create", {
         username: username.value,
         email: email.value,
         password: password.value,
