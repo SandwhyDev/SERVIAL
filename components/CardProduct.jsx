@@ -8,21 +8,21 @@ const CardProduct = ({ title = "Ini Title", berat = "200" }) => {
     alert("berhasil");
   };
   return (
-    <div className="w-[50%] h-[250px] bg-white shadow-lg flex flex-col items-center p-4 gap-4 rounded-lg">
+    <div className="w-[47%] h-[200px] bg-white shadow-lg flex flex-col items-center p-4 gap-4 rounded-lg">
       <Image src={imageProduct} width="80" height="100" />
       <div className="desk flex flex-col">
         <h1 className="font-bold">{title}</h1>
         <p className="text-sm text-gray-500 font-light">{berat} gram</p>
       </div>
 
-      <button
+      {/* <button
         className="bg-green-500 p-2 rounded-full w-10 h-10 flex items-center justify-center"
         onClick={handleButton}
       >
         <span className="text-white text-xl">
           <AiOutlinePlus />
         </span>
-      </button>
+      </button> */}
     </div>
   );
 };

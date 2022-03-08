@@ -5,9 +5,11 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { IoIosArrowDown } from "react-icons/io";
 import Image from "next/image";
 import test from "../../../assets/Data_security.png";
+import { useRouter } from "next/router";
 const index = () => {
+  const navigation = useRouter();
   const handleTambahProduct = () => {
-    alert("test");
+    navigation.push("/cms/products/upload_products");
   };
 
   const [showUrut, setShowUrut] = useState(false);

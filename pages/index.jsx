@@ -29,13 +29,20 @@ export default function Home() {
           <SwiperItems />
         </div>
 
-        <div className="cardProduct w-full h-screen flex gap-2  overflow-y-scroll">
+        <div className="cardProduct w-full flex flex-wrap gap-4 overflow-y-scroll justify-between pb-14 ">
+          <CardProduct />
+          <CardProduct />
+          <CardProduct />
+          <CardProduct />
           <CardProduct />
           <CardProduct />
         </div>
       </main>
 
+     
       <Footer />
+
+    
     </div>
   );
 }

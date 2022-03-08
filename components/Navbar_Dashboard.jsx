@@ -43,7 +43,7 @@ const Navbar_Dashboard = () => {
 
           <li>
             <Link href={"/cms/products"}>
-              <div className="w-full cursor-pointer flex gap-2 items-center">
+              <div className="w-full cursor-pointer flex gap-2 items-center active:bg-white">
                 <Image src={productPng} width={25} height={25} />
                 <h1>products</h1>
               </div>
