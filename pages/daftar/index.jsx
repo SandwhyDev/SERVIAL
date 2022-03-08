@@ -1,32 +1,32 @@
 import axios from "axios";
 import Link from "next/link";
 import React from "react";
-import { AiFillGoogleCircle } from "react-icons/ai";
+import { useRouter } from "next/router";
 import { FcGoogle } from "react-icons/fc";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 
 const index = () => {
+  const navigation = useRouter();
   const handleDaftar = (e) => {
     e.preventDefault();
 
-    const { username, email, password } = e.target;
+    const { email, password } = e.target;
 
     console.log({
-      username: username.value,
       email: email.value,
       password: password.value,
     });
 
     axios
-      .post("https://sandy_api.jvalleyserver.net/api/user_create", {
-        username: username.value,
+      .post("http://localhost:9000/api/user_create", {
         email: email.value,
         password: password.value,
       })
       .then((response) => {
         if (response.status == 200) {
           alert("berhasil");
+          navigation.push("/login");
         }
       })
       .catch((err) => {
