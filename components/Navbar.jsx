@@ -68,7 +68,10 @@ const Navbar = () => {
                 <div className="w-full flex flex-col items-end ">
                   <li className="w-full border-[.5px] border-red-500 bg-white p-2 text-red-400 text-right ">
                     <Link href={"/"}>
-                      <div className="flex  items-center justify-end gap-2">
+                      <div
+                        className="flex  items-center justify-end gap-2"
+                        onClick={handleMenu}
+                      >
                         <h1>Home</h1>
                         <span>
                           <AiOutlineHome size={20} />
@@ -78,7 +81,10 @@ const Navbar = () => {
                   </li>
                   <li className="w-full border-[.5px] border-red-500 bg-white p-2 text-red-400 text-right">
                     <Link href={"/login"}>
-                      <div className="flex  items-center justify-end gap-2">
+                      <div
+                        className="flex  items-center justify-end gap-2"
+                        onClick={handleMenu}
+                      >
                         <h1>login</h1>
                         <span>
                           <FiLogIn size={20} />
@@ -89,7 +95,10 @@ const Navbar = () => {
 
                   <li className="w-full border-[.5px] border-red-500 bg-white p-2 text-red-400 text-right">
                     <Link href={"/blog"}>
-                      <div className="flex  items-center justify-end gap-2">
+                      <div
+                        className="flex  items-center justify-end gap-2"
+                        onClick={handleMenu}
+                      >
                         <h1>blog</h1>
                         <span>
                           <BsNewspaper size={20} />
@@ -100,7 +109,10 @@ const Navbar = () => {
 
                   <li className="w-full border-[.5px] border-red-500 bg-white p-2 text-red-400 text-right">
                     <Link href={"/contact_us"}>
-                      <div className="flex  items-center justify-end gap-2">
+                      <div
+                        className="flex  items-center justify-end gap-2"
+                        onClick={handleMenu}
+                      >
                         <h1>contact us</h1>
                         <span>
                           <RiCustomerService2Fill size={20} />
