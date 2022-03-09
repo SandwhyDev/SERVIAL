@@ -17,32 +17,25 @@ const Form_Product = () => {
 			image: image.files[0],
 		})
 
-		// const formData = new FormData()
+		const fd = new FormData()
+		fd.append('image', image.files[0])
+		fd.append('title', title.value)
+		fd.append('deskripsi', deskripsi.value)
+		fd.append('categories', categories.value)
+		fd.append('berat', berat.value)
+		fd.append('satuan_berat', satuan_berat.value)
+		fd.append('harga', harga.value)
 
 		axios
-			.post(
-				'http://localhost:9000/api/product_create',
-				{
-					Headers: {
-						'Content-Type': 'multipart/form-data',
-					},
-				},
-				{
-					title: title.value,
-					deskripsi: deskripsi.value,
-					berat: berat.value,
-					satuan_berat: satuan_berat.value,
-					categories: categories.value,
-					harga: harga.value,
-					image: image.files[0],
-				}
-			)
+			.post('http://localhost:9000/api/product_create', fd)
 			.then((response) => {
 				if (response == 200) {
 					alert('berhasil')
 				}
 			})
 			.catch((err) => {
+				alert(err)
+
 				console.log(err)
 			})
 	}
@@ -53,6 +46,7 @@ const Form_Product = () => {
 		>
 			<h1 className="text-2xl text-white">UPLOAD PRODUCT</h1>
 			<div className="form_group flex flex-col gap-2 w-full">
+				<label htmlFor="title">Nama Product</label>
 				<input
 					type="text"
 					id="title"
@@ -64,6 +58,8 @@ const Form_Product = () => {
 			</div>
 
 			<div className="form_group flex flex-col gap-2 w-full">
+				<label htmlFor="deskripsi"></label>
+
 				<textarea
 					name="deskripsi"
 					id="deskripsi"
@@ -76,6 +72,8 @@ const Form_Product = () => {
 			</div>
 
 			<div className="w-full flex  gap-2 justify-between ">
+				<label htmlFor="berat"></label>
+
 				<input
 					type="number"
 					id="berat"
@@ -83,6 +81,8 @@ const Form_Product = () => {
 					className="border-[.5px] p-2 w-[50%] outline-none focus:outline-blue-500 rounded-md"
 					placeholder="Berat"
 				/>
+				<label htmlFor="satuan_berat"></label>
+
 				<select id="satuan_berat" name="satuan_berat" className="h-10 rounded-md p-2 w-[50%]">
 					<option hidden={true}>Berat Satuan</option>
 					<option value="ons">Ons</option>
@@ -94,6 +94,8 @@ const Form_Product = () => {
 			</div>
 
 			<div className="flex flex-col gap-2 w-full">
+				<label htmlFor="categories"></label>
+
 				<select id="categories" name="categories" className="h-10 rounded-md p-2" required>
 					<option hidden={true}>Categori</option>
 					<option value="makanan">Makanan</option>
@@ -103,6 +105,8 @@ const Form_Product = () => {
 			</div>
 
 			<div className="form_group flex flex-col gap-2 w-full">
+				<label htmlFor="harga"></label>
+
 				<input
 					type="number"
 					id="harga"
@@ -114,6 +118,8 @@ const Form_Product = () => {
 			</div>
 
 			<div className="form_group flex flex-col gap-2 w-full">
+				<label htmlFor="image"></label>
+
 				<input
 					type="file"
 					id="image"
@@ -123,7 +129,10 @@ const Form_Product = () => {
 				/>
 			</div>
 
-			<button className=" p-2 w-full outline-none focus:outline-blue-500 rounded-md bg-red-500 text-white border-[.5px] border-white">
+			<button
+				className=" p-2 w-full outline-none focus:outline-blue-500 rounded-md bg-red-500 text-white border-[.5px] border-white"
+				type="submit"
+			>
 				Upload Product
 			</button>
 		</form>
