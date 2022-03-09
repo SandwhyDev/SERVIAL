@@ -1,21 +1,12 @@
 import axios from 'axios'
 import React from 'react'
+import { Router, useRouter } from 'next/router'
 
 const Form_Product = () => {
+	const navigation = useRouter()
+
 	const handleSubmit = (e) => {
 		e.preventDefault()
-
-		const { title, deskripsi, berat, satuan_berat, categories, harga, image } = e.target
-
-		console.log({
-			title: title.value,
-			deskripsi: deskripsi.value,
-			berat: berat.value,
-			satuan_berat: satuan_berat.value,
-			categories: categories.value,
-			harga: harga.value,
-			image: image.files[0],
-		})
 
 		const fd = new FormData()
 		fd.append('image', image.files[0])
@@ -29,8 +20,9 @@ const Form_Product = () => {
 		axios
 			.post('http://localhost:9000/api/product_create', fd)
 			.then((response) => {
-				if (response == 200) {
+				if (response.status == 200) {
 					alert('berhasil')
+					navigation.push('/cms/products')
 				}
 			})
 			.catch((err) => {
