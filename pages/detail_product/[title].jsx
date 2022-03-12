@@ -13,7 +13,7 @@ const DetailProduct = ({ data }) => {
 	}
 	return (
 		<div className="w-screen min-h-screen flex flex-col ">
-			<div className="w-full h-12  flex items-center justify-between shadow-md p-4 bg-white sticky top-0">
+			<div className="w-full h-12  flex items-center justify-between shadow-md p-4 bg-white ">
 				<span className="text-xl " onClick={handleBack}>
 					<BiArrowBack />
 				</span>

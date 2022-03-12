@@ -1,13 +1,11 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { useEffect, useState } from 'react'
+
 import CardProduct from '../components/CardProduct'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import SearchBar from '../components/SearchBar'
 import SwiperItems from '../components/SwiperItems'
-import styles from '../styles/Home.module.css'
-import { MdSecurity } from 'react-icons/md'
+
 import axios from 'axios'
 import Link from 'next/link'
 export default function Home({ data }) {
