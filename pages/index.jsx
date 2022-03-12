@@ -52,6 +52,7 @@ export default function Home({ data }) {
 
 export async function getServerSideProps() {
 	const result = await axios.get('http://localhost:9000/api/product_read')
+
 	return {
 		props: {
 			data: result.data.query,
