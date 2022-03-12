@@ -8,13 +8,13 @@ import Link from 'next/link'
 
 const CardProduct = ({ title, berat, satuanBerat, imgProduct, data }) => {
 	return (
-		<div className="w-[47%] h-auto bg-white shadow-lg flex flex-col items-center p-4 gap-4 rounded-lg">
+		<div className="w-[47%] h-[200px] bg-white shadow-lg flex flex-col items-center p-4 gap-4 rounded-lg">
 			<Link href={`detail_product/${title}`}>
-				<div>
-					<img src={imgProduct} alt="" />
-					<div className="desk flex flex-col">
+				<div className="flex flex-col gap-2">
+					<img src={imgProduct} alt="" className="w-full h-[110px] " />
+					<div className="desk flex flex-col justify-center items-center">
 						<h1 className="font-bold">{title}</h1>
-						<p className="text-sm text-gray-500 font-light">
+						<p className="text-md text-gray-500 font-light">
 							{berat} {satuanBerat}
 						</p>
 					</div>
