@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 const CardProduct = ({ title, berat, satuanBerat, imgProduct, data }) => {
 	return (
-		<div className="w-[47%] h-[220px] bg-white shadow-lg flex flex-col items-center p-4 gap-4 rounded-lg">
+		<div className="w-[47%] h-auto bg-white shadow-lg flex flex-col items-center p-4 gap-4 rounded-lg">
 			<Link href={`detail_product/${title}`}>
 				<div className="flex flex-col gap-2">
 					<img src={imgProduct} alt="" className="w-full h-[110px] " />

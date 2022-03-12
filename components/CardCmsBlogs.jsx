@@ -6,7 +6,7 @@ const CardCmsBLogs = ({
 	views = 0,
 }) => {
 	return (
-		<div className="w-[307px] h-[270px] bg-white shadow-md flex flex-col    ">
+		<div className="w-[300px] h-auto bg-white shadow-md flex flex-col    ">
 			<img src={image} alt="" className="w-full h-[200px] object-cover" />
 			<div className="w-full h-full flex items-center p-2 justify-between">
 				<div className="w-[70%] ">

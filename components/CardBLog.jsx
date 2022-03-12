@@ -9,7 +9,7 @@ const CardBLog = ({
 	return (
 		<div>
 			<Link href={`/blog/${title}`}>
-				<div className="CardBlog w-full h-[400px] shadow-lg flex flex-col gap-2">
+				<div className="CardBlog w-full h-auto shadow-lg flex flex-col gap-2">
 					<img src={img} alt="" className="w-screen h-[70%] object-cover" />
 					<div className="deskripsi flex flex-col gap-1 px-4 pb-2">
 						<h1 className="font-bold">{title}</h1>
