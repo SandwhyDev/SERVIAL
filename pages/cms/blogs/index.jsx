@@ -12,6 +12,7 @@ const index = ({ data, total_data }) => {
 	const handleUpload = () => {
 		setUpload(!upload)
 	}
+
 	return (
 		<div className="w-full h-screen flex bg-slate-100 ">
 			<Navbar_Dashboard />
@@ -37,12 +38,13 @@ const index = ({ data, total_data }) => {
 						<h1>Upload Blog</h1>
 					</div>
 				</div>
-				<div className="w-full  flex items-start justify-start gap-4 flex-wrap">
+				<div className="w-full h-full overflow-y-scroll  flex items-start justify-start gap-4 flex-wrap">
 					{data.map((e) => {
 						return (
 							<CardCmsBLogs
+								key={e.id}
 								title={e.title}
-								createdAt={e.createdAt.split(':')[0].split('T')[0]}
+								createdAt={e.createdAt.split('T')[0]}
 								image={e.banner.location}
 							/>
 						)
@@ -55,7 +57,6 @@ const index = ({ data, total_data }) => {
 
 export async function getServerSideProps() {
 	const result = await ax.get('/blog_read')
-	console.log(result.data)
 	return {
 		props: {
 			data: result.data.query,
