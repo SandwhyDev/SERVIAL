@@ -9,7 +9,7 @@ import SwiperItems from '../components/SwiperItems'
 import styles from '../styles/Home.module.css'
 import { MdSecurity } from 'react-icons/md'
 import axios from 'axios'
-
+import Link from 'next/link'
 export default function Home({ data }) {
 	return (
 		<div className="flex flex-col items-center bg-gray-100 w-screen h-auto min-h-screen">
@@ -52,7 +52,6 @@ export default function Home({ data }) {
 
 export async function getServerSideProps() {
 	const result = await axios.get('http://localhost:9000/api/product_read')
-
 	return {
 		props: {
 			data: result.data.query,

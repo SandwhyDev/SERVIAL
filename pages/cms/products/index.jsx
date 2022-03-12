@@ -10,8 +10,7 @@ import Table_Products from '../../../components/Table_Products'
 import axios from 'axios'
 import Total_product from '../../../components/Total_product'
 
-export default function index({ data }) {
-	console.log(data.total_data)
+export default function Produts({ data, total_data }) {
 	const navigation = useRouter()
 	const handleTambahProduct = () => {
 		navigation.push('/cms/products/upload_products')
@@ -27,7 +26,7 @@ export default function index({ data }) {
 				{/* <SearchBard /> */}
 
 				<div className="hasil w-full h-14 flex items-center  justify-between">
-					<Total_product total={data.total_data} />
+					<Total_product total={total_data} />
 					<div className="left flex gap-2 items-center">
 						<div
 							className="newProduct w-44 h-10 rounded-md bg-red-500 text-white flex items-center gap-2 justify-center p-2 cursor-pointer"
@@ -61,8 +60,21 @@ export default function index({ data }) {
 					</div>
 				)}
 
-				<div className="w-full h-screen  flex flex-col  rounded-xl">
-					<Table_Products />
+				<div className="w-full h-screen  flex flex-col  rounded-xl overflow-y-scroll">
+					{data.map((e) => {
+						return (
+							<Table_Products
+								id={e.id}
+								namaProduct={e.title}
+								deskripsi={e.deskripsi}
+								harga={e.harga}
+								berat={e.berat}
+								satuanberat={e.satuan_berat}
+								categories={e.categories}
+								image={e.photo[0].location}
+							/>
+						)
+					})}
 				</div>
 			</div>
 		</div>
@@ -71,10 +83,12 @@ export default function index({ data }) {
 
 export async function getServerSideProps() {
 	const result = await axios.get('http://localhost:9000/api/product_read')
+
 	console.log(result.data.total_data)
 	return {
 		props: {
-			data: result.data,
+			data: result.data.query,
+			total_data: result.data.total_data,
 		},
 	}
 }

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 
-const Table_Products = () => {
+const Table_Products = ({ id, namaProduct, deskripsi, harga, berat, satuanberat, categories, image }) => {
 	return (
 		<table className="customTable rounded-md">
 			<thead>
@@ -18,19 +18,15 @@ const Table_Products = () => {
 			</thead>
 			<tbody>
 				<tr>
-					<td>1</td>
-					<td>whisky</td>
-					<td>ini deskripsi</td>
-					<td>Rp. 20000</td>
-					<td>200</td>
-					<td>gram</td>
-					<td>makanan</td>
+					<td>{id}</td>
+					<td>{namaProduct}</td>
+					<td>{deskripsi}</td>
+					<td>{harga}</td>
+					<td>{berat}</td>
+					<td>{satuanberat}</td>
+					<td>{categories}</td>
 					<td className="p-2 text-center flex items-center justify-center border-[.5px]">
-						<img
-							src="https://images.pexels.com/photos/7048694/pexels-photo-7048694.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-							alt=""
-							className="w-[250px] h-[150px] object-cover "
-						/>
+						<img src={image} alt="photo product" className="w-[150px] h-[150px] object-cover " />
 					</td>
 				</tr>
 			</tbody>

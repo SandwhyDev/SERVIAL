@@ -1,11 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
 import { AiOutlinePlus } from 'react-icons/ai'
+import { useRouter } from 'next/router'
+import { Result } from 'postcss'
+import axios from 'axios'
 
-const CardProduct = ({ title, berat, satuanBerat, imgProduct }) => {
-	const handleButton = () => {
-		alert('berhasil')
-	}
+const CardProduct = ({ title, berat, satuanBerat, imgProduct, data }) => {
 	return (
 		<div className="w-[47%] h-auto bg-white shadow-lg flex flex-col items-center p-4 gap-4 rounded-lg">
 			<img src={imgProduct} alt="" />

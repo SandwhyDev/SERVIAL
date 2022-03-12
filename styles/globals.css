@@ -88,7 +88,7 @@ table.customTable {
 	background-color: #ffffff;
 	border-collapse: collapse;
 	border-width: 0.5px;
-	border-color: #aaaaaa;
+	border-color: #e96666;
 	border-style: solid;
 	color: #000000;
 	border-radius: 15px;
@@ -98,11 +98,11 @@ table.customTable {
 table.customTable td,
 table.customTable th {
 	border-width: 0.5px;
-	border-color: #aaaaaa;
+	border-color: #e96666;
 	border-style: solid;
 }
 
 table.customTable thead {
-	background-color: #aaaaaa;
+	background-color: #e96666;
 	border-radius: 5px;
 }
