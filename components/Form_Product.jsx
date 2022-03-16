@@ -64,8 +64,6 @@ const Form_Product = () => {
 			</div>
 
 			<div className="w-full flex  gap-2 justify-between ">
-				<label htmlFor="berat"></label>
-
 				<input
 					type="number"
 					id="berat"

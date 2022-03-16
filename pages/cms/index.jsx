@@ -2,6 +2,7 @@ import React from 'react'
 import CardCms from '../../components/CardCms'
 import Navbar_Dashboard from '../../components/Navbar_Dashboard'
 import ax from '../../libs/ax'
+import ReactAudioPlayer from 'react-audio-player'
 
 const index = ({ total_data_users, total_data_products, total_data_blogs }) => {
 	return (
@@ -22,7 +23,6 @@ export async function getServerSideProps(ctx) {
 	const total_data_users = await ax.get('/user_read')
 	const total_data_products = await ax.get('/product_read')
 	const total_data_blogs = await ax.get('/blog_read')
-	console.log(total_data_blogs.data.total_data)
 	return {
 		props: {
 			total_data_products: total_data_products.data.total_data,
