@@ -29,13 +29,13 @@ export default function Produts({ data, total_data }) {
 					<Total_product total={total_data} />
 					<div className="left flex gap-2 items-center">
 						<div
-							className="newProduct w-44 h-10 rounded-md bg-red-500 text-white flex items-center gap-2 justify-center p-2 cursor-pointer"
+							className="w-44 p-2 rounded-md bg-red-400 text-white flex justify-center items-center gap-2"
 							onClick={handleTambahProduct}
 						>
 							<span className="text-xl font-bold">
 								<AiOutlinePlus />
 							</span>
-							<h1>Tambah product</h1>
+							<h1 >Tambah product</h1>
 						</div>
 
 						{/* <div
