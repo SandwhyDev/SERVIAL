@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import { FcGoogle } from 'react-icons/fc'
 import Footer from '../../components/Footer'
 import Navbar from '../../components/Navbar'
+import ax from '../../libs/ax'
 
 const index = () => {
 	const navigation = useRouter()
@@ -13,8 +14,8 @@ const index = () => {
 
 		const { email, password } = e.target
 
-		axios
-			.post('http://localhost:9000/api/user_create', {
+		ax
+			.post('/user_create', {
 				email: email.value,
 				password: password.value,
 			})
@@ -107,7 +108,7 @@ const index = () => {
 						/>
 					</div>
 
-					<button className="w-full h-12 bg-red-300 text-white rounded-md uppercase text-xl">Login</button>
+					<button className="w-full h-12 bg-red-300 text-white rounded-md uppercase text-xl">Daftar</button>
 
 					<div
 						className="google flex w-full bg-white border-[.5px] border-black p-2 items-center justify-center gap-2 rounded-md"

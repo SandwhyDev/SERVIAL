@@ -6,20 +6,21 @@ import { AiFillGoogleCircle } from 'react-icons/ai'
 import { FcGoogle } from 'react-icons/fc'
 import Footer from '../../components/Footer'
 import Navbar from '../../components/Navbar'
+import ax from '../../libs/ax'
 
 const index = () => {
 	const handleLogin = (e) => {
 		e.preventDefault()
 		const { email, password } = e.target
 
-		axios
-			.post('https://sandy_api.jvalleyserver.net/api/user_login', {
+		ax
+			.post('/user_login', {
 				email: email.value,
 				password: password.value,
 			})
 			.then((response) => {
 				if (response.status == 200) {
-					// alert("berhasil login");
+					alert("berhasil login");
 					sessionStorage.setItem('token', response.data.token)
 					Router.push('/')
 				} else if (response.status == 404) {
